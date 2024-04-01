@@ -1,0 +1,28 @@
+// Fazemos isso pois o servidor não aceita requisições que não sejão do tipo get
+
+POST http://localhost:3333/post
+Content-Type: application/json
+
+{
+    "title": "Bolo de chocolate",
+    "textBox": "Igredientes e cobertura abaixo",
+    "attachment_uri": "http://video-de-bolo.mp4"
+}
+
+###
+GET http://localhost:3333/post
+
+###
+PUT http://localhost:3333/post/1f4b3852-e6a6-4875-b1c9-42ecb8648873
+Content-Type: application/json
+
+{
+    "title": "Bolo de fuba",
+    "textBox": "Igredientes e cobertura abaixo",
+    "attachment_uri": "http://video-de-bolo.mp4",
+    "created_at": "2024-03-26 T 07:35:12:000-03:00"
+
+}
+
+###
+DELETE http://localhost:3333/post/1f4b3852-e6a6-4875-b1c9-42ecb8648873
