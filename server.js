@@ -29,7 +29,7 @@ server.get('/post', async (request) => {
     return post
 })
 
-server.put('/post/:id', async(request, reply) => {
+server.put('/post/:id', async (request, reply) => {
     const postId = request.params.id
     const { title, textBox, attachment_uri, type, created_at } = request.body
 
@@ -44,7 +44,7 @@ server.put('/post/:id', async(request, reply) => {
     return reply.status(204).send()
 })
 
-server.delete('/post/:id', async(request, reply) => {
+server.delete('/post/:id', async (request, reply) => {
     const postId = request.params.id
 
     await database.delete(postId)
@@ -53,6 +53,7 @@ server.delete('/post/:id', async(request, reply) => {
 })
 
 server.listen({
-   port: process.env.PORT ?? 3333
+    host: '0.0.0.0',
+    port: process.env.PORT ?? 3333
 })
 
